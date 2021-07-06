@@ -4,9 +4,7 @@ This guide will help you to install Nagios plugin both for Python 2.7.x and 3.5.
 
 Assuming you've already downloaded, Puppet VM and followed setup instructions
 Puppet VM password
-
 root
-
 amo.paton
 
 Installation of nagiosplugin 1.2.4:
