@@ -1,39 +1,31 @@
-# Python Packages Required to install Nagios and Puppet
+# Installing Python Packages of Nagios and Puppet 
 
-This guide will help you to install Nagios plugin both for Python 2.7.x and 3.5.x.
+### About This Guide
+This guide will help you to install client-side version of Nagios and Puppet Python packages on Windows Operating System. It'll help you to access these services from Python interface.
 
-Assuming you've already downloaded, Puppet VM and followed setup instructions
-Puppet VM password
-root
-amo.paton
-
-Installation of nagiosplugin 1.2.4:
-- Operating System: `Windows 7 SP1 64 bits`
-- Python Version: `2.7.x 32 bits` and `3.5.x 64 bits`
+### Prerequisites
+- Operating System: `Windows 7 SP1 x64 Architecture`
+- Python Version: `3.7.11 x64 bits`
 - Installation mode: `pip`
 
-Make sure following 
-For python 2.7, C:\Python27\python.exe
-For python 3.5, C:\Python35\python3.exe
+### **Nagios**
 
-For nagiosplugin installation, Python 2.7
+Nagios is an essential part for monitoring in DevOps lifecycle. It is an software monitoring tool that helps to monitor, alert and resolve problems of infrastructural devices and application before they can affect customers and businesses. 
 
-`C:\> python -m pip install nagiosplugin`
+### Installation:
 
-For nagiosplugin installation, Python 3.5
+To install `nagiosplugin`,
 
-C:\>pip install nagiosplugin
+`C:\> python -m pip install nagiosplugin==1.3.2`
 
+### **Puppet**
+Puppet is an essential part for automation in DevOps lifecycle. It is an infrastructural automation tool which helps to manage and complex workflows and configuration of servers.
 
-To install check_puppet_agent (mind with the underscores)
+To install `check_puppet_agent`,
 
-Install wheel with pip, for Python 2.7:
+`C:\> python -m pip install check_puppet_agent`
 
-C:>pip install check_puppet_agent-1.0.0-py2.py3-none-any.whl
+where `-m` targets to install package for specific executable python file.
 
-Install wheel with easy_install(provided you have setuptools already installed), For Python 3.5:
+With these steps, we have completed installation of Nagios and Puppet packages.
 
-
-This procedure auto detects the Python 3.5 (if set in Environmental Variables)
-
-C:>easy_install -z check_puppet_agent-1.0.0-py3.5.egg
