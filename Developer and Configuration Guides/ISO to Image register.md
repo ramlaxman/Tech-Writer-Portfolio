@@ -103,11 +103,11 @@
                 initrd /initramfs-2.6.32-358.18.1.el6.x86_64.img
       ```
         
-      5.7.4 Add the following line to the /etc/sysconfig/network file to disable the zeroconf route, which can interfere with access to the metadata service:
+    6.7.4 Add the following line to the /etc/sysconfig/network file to disable the zeroconf route, which can interfere with access to the metadata service:
   
-      `NOZEROCONF=yes`
+    `NOZEROCONF=yes`
 
-      5.7.5  Edit the `/etc/udev/rules.d/70-persistent-net.rules` file and remove all entries for the existing network interface. Make sure that you delete all entries before terminating the virtual machine and registering it with Eucalyptus.
+    6.7.5  Edit the `/etc/udev/rules.d/70-persistent-net.rules` file and remove all entries for the existing network interface. Make sure that you delete all entries before terminating the virtual machine and registering it with Eucalyptus.
       </ol>
 
 7. Eucalyptus instances use cloud-init to specify actions to run on your instance at boot time, which can be passed using the userdata parameter. To install and conifgure cloud-init on your instance:
