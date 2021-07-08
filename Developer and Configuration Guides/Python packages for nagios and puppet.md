@@ -19,7 +19,7 @@ To install `nagiosplugin`,
 `C:\> python -m pip install nagiosplugin==1.3.2`
 
 ### **Puppet**
-Puppet is an essential part for automation in DevOps lifecycle. It is an infrastructural automation tool which helps to manage and complex workflows and configuration of servers.
+Puppet is an essential part for automation in DevOps lifecycle. It is an infrastructural automation tool which helps to manage complex workflows and configuration of servers.
 
 ### Installation:
 To install `check_puppet_agent`,
