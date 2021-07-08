@@ -15,15 +15,21 @@
  
     6.1 We create an empty image file of 6 GB:
 
-    *qemu-img create -f raw centos6.4_new.img 6G*
+    ```
+    qemu-img create -f raw centos6.4_new.img 6G
+    ```
     
     6.2 Use the parted utility to set the disk label.
     
-    *parted centos6.4_new.img mklabel msdos*
+    ```
+    parted centos6.4_new.img mklabel msdos
+    ```
 
     6.3 Start a new virtual machine installation by using tool `virt-install` as in the following example (this is a complete command distributed among multiple lines):
     
-    > virt-install --name centos6.4_new --ram 4096 --os-type linux --os-variant rhel6 -c /tmp/CentOS-6.4-x86_64-bin-DVD1.iso --diskpath=/tmp/centos6.img,device=disk,bus=virtio,--graphics vnc,listen=0.0.0.0 --force
+    ```
+    virt-install --name centos6.4_new --ram 4096 --os-type linux --os-variant rhel6 -c /tmp/CentOS-6.4-x86_64-bin-DVD1.iso --diskpath=/tmp/centos6.img,device=disk,bus=virtio,--graphics vnc,listen=0.0.0.0 --force
+    ```
 
     6.4 Use the VNC client of your choice to connect to the new virtual machine and complete the installation.
 
