@@ -141,7 +141,7 @@ Now go to Front end machine, type `lvdisplay` on terminal, you will see the path
 You'll see the following output:
 
 > 6144+0 records in
-  6144+0 records out
-  6442450944 bytes (6.4 GB) copied, 151.13 s, 42.6 MB/s
+> 6144+0 records out
+> 6442450944 bytes (6.4 GB) copied, 151.13 s, 42.6 MB/s
 
 This completes the process of converting Operating System image into Eucalyptus Cloud ready image.
