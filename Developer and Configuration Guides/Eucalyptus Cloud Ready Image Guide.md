@@ -137,7 +137,7 @@ This completes the process of converting Operating System image into Eucalyptus 
 
 If you've already running instance and volume is available, you can refer to the following commands:
 
-### Copy the `.img` file into the attached volume to instance
+## Copy the `.img` file into the attached volume to instance
 Now go to Front end machine, type `lvdisplay` on terminal, you will see the path of volume attached to the instance just like below & execute in following sequence:
 
 ```
@@ -151,7 +151,7 @@ You'll see the following output:
 > 
 > 6442450944 bytes (6.4 GB) copied, 151.13 s, 42.6 MB/s
 
-### FOR INSTANCE STORE IMAGE
+## FOR INSTANCE STORE IMAGE
 
 To Bundle the image:
 ```
