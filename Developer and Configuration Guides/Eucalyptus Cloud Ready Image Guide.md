@@ -1,4 +1,4 @@
-# Create Eucalyptus Ready Linux Image from Operating System ISO 
+# Eucalyptus Cloud Ready Image Guide
 
 <!---* first level A item - no space in front the bullet character
   * second level Aa item - 1 space is enough
@@ -6,31 +6,26 @@
       * second level Ab item - 4 spaces possible too
   * first level B item--->
 
+## Create Hardware Virtual Machine (HVM) Image for Eucalyptus
 1. Go to the Node Controller (NC).
 2. Log into Eucalyptus User console using `http://<IP_address_of_machine>:8888`
 3. Stop running instances if any. Also stop NC service.
-4. Make sure that all the running instacnes have stopped in Eucalyptus user console.
+4. Make sure that all the running instances have stopped in Eucalyptus user console.
 5. Also make sure that you've logged in as `root` user.
 6. We'll use QEMU, an open source virtualizer helps in hardware virtualization, disk utility to create disk image.
  
     6.1 We create an empty image file of 6 GB:
-
     ```
     qemu-img create -f raw centos6.4_new.img 6G
     ```
-    
     6.2 Use the parted utility to set the disk label.
-    
     ```
     parted centos6.4_new.img mklabel msdos
     ```
-
     6.3 Start a new virtual machine installation by using tool `virt-install` as in the following example (this is a complete command distributed among multiple lines):
-    
     ```
     virt-install --name centos6.4_new --ram 4096 --os-type linux --os-variant rhel6 -c /tmp/CentOS-6.4-x86_64-bin-DVD1.iso --diskpath=/tmp/centos6.img,device=disk,bus=virtio,--graphics vnc,listen=0.0.0.0 --force
     ```
-
     6.4 Use the VNC client of your choice to connect to the new virtual machine and complete the installation.
 
     6.5 Modify the following `libvirt.xml` template to create the VM:
@@ -119,9 +114,11 @@
     7.1 Install cloud-init:
     ```
     # rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-    
-    # yum install cloud-init`
     ```
+    ```
+    # yum install cloud-init
+    ```
+
     7.2 By default, `cloud-init` uses `ec2-user` as the log-in user. Add `ec2-user` to your instance and give it appropriate sudo permissions:
     ```
     # adduser ec2-user
@@ -135,21 +132,41 @@
        ec2-user     ALL=(ALL)    NOPASSWD: ALL
     ```
 
+This completes the process of converting Operating System image into Eucalyptus Cloud ready image.
 
-\
-You've now installed a distribution from an ISO and created a Eucalyptus-ready image that can be registered with Eucalyptus.
 
-Now go to Front end machine, type `lvdisplay` on terminal, you will see the path of volume attached to the instance just like below & exceute in following sequence[To copy the img file into the attached volume]:
+If you've already running instance and volume is available, you can refer to the following commands:
+
+### Copy the `.img` file into the attached volume to instance
+Now go to Front end machine, type `lvdisplay` on terminal, you will see the path of volume attached to the instance just like below & execute in following sequence:
 
 ```
-[root@localhost Downloads]# dd if=centos-6.4-x86_64.img of=/dev/euca-ebs-storage-vg-vol-0D013CDE/euca-vol-0D013CDE bs=1M
+# dd if=centos-6.4-x86_64.img of=/dev/euca-ebs-storage-vg-vol-0D013CDE/euca-vol-0D013CDE bs=1M
 ```
 You'll see the following output:
 
 > 6144+0 records in
->
+> 
 > 6144+0 records out
 > 
 > 6442450944 bytes (6.4 GB) copied, 151.13 s, 42.6 MB/s
 
-This completes the process of converting Operating System image into Eucalyptus Cloud ready image.
+### FOR INSTANCE STORE IMAGE
+
+To Bundle the image:
+```
+# euca-bundle-image -i centos6.4.img --kernel true --arch x86_64
+```
+
+To upload image to Eucalyptus EMI Store:
+```
+# euca-upload-bundle -b my_bucket -m /tmp/centos6.img.manifest.xml
+```
+> Uploaded images/centos-6.4-x86_64.img.manifest.xml 
+
+Follow this step to register Eucalyptus Ready Image i.e. HVM to Eucalyptus:
+```
+euca-register images/centos-6.4-x86_64.img.manifest.xml -a x86_64 -n CentOS-Company_Name-EucaReady
+```
+
+You've now installed a distribution from an ISO and created a Eucalyptus-ready image that can be registered with Eucalyptus.
