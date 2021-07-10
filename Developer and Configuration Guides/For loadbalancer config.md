@@ -34,9 +34,9 @@ To create Load Balancer from EucaLobo:
    service httpd start
    ```
    You'll see the following output:
-   ```
-   Starting httpd: httpd: Could not reliably determine the server's fully qualified domain name, using 10.10.1.113 for ServerName   [ OK ]
-   ```
+   
+   > Starting httpd: httpd: Could not reliably determine the server's fully qualified domain name, using 10.10.1.113 for ServerName   [ OK ]
+   
 4. `[root@ip-10-10-1-113 ~]#` 
    ```
    vi /var/www/html/index.html
@@ -51,21 +51,22 @@ To create Load Balancer from EucaLobo:
    ```
    Output:
    > Disabled
+
 7. `[root@ip-10-10-1-113 ~]#` 
    ```
    iptables -nvL
    ```
    You'll see the following outputs:
-   ```
-   Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+   
+   > Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
    pkts bytes target     prot opt in     out     source               destination        
- 
-   Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+   >
+   > Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
    pkts bytes target     prot opt in     out     source               destination        
- 
-   Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+   >
+   >Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
    pkts bytes target     prot opt in     out     source               destination        
-   ```
+   
 8. `[root@ip-10-10-1-113 ~]#` 
    ```
    iptables -F
@@ -75,9 +76,8 @@ To create Load Balancer from EucaLobo:
    service iptables save
    ```
    You'll see the following outputs:
-   ```
-   iptables: Saving firewall rules to /etc/sysconfig/iptables: [ OK ]
-   ```
+   > iptables: Saving firewall rules to /etc/sysconfig/iptables: [ OK ]
+   
  
 10. `[root@ip-10-10-1-113 ~]#` 
     ```
@@ -94,7 +94,7 @@ To create Load Balancer from EucaLobo:
     ```
     vi /etc/ntp.conf
     ```
-    Add `0.centos.pool.ntp.org` to above file.
+    Add `0.centos.pool.ntp.org` line at the end of `ntp.conf` file.
  
 12. `[root@ip-10-10-1-113 ~]#` 
     ```
@@ -130,17 +130,26 @@ To create Load Balancer from EucaLobo:
     wget http://192.168.2.100/index.html
     ```
     If you're connected to load balancer instance, you can see downloaded `index.html` file.
-    ```
-    --  2014-02-03 08:18:50
-    --  http://192.168.2.100/index.html 
-    Connecting to 192.168.2.100:80... connected.
-    HTTP request sent, awaiting response... 200 OK
-    Length: 16 [text/html]
-    Saving to: “index.html”
-    100%[=============================================================================================================================>] 
-    16 --.-K/s   in 0s      
-    2014-02-03 08:18:50 (3.43 MB/s) - “index.html” saved [16/16]
-    ``` 
+    
+    > --  2014-02-03 08:18:50
+    >
+    > --  http://192.168.2.100/index.html 
+    >
+    > Connecting to 192.168.2.100:80... connected.
+    >
+    > HTTP request sent, awaiting response... 200 OK
+    >
+    > Length: 16 [text/html]
+    >
+    > Saving to: “index.html”
+    >
+    > 100%
+    >[=============================================================================================================================>] 
+    > 
+    > 16 --.-K/s   in 0s      
+    >
+    > 2014-02-03 08:18:50 (3.43 MB/s) - “index.html” saved [16/16]
+    
 16. `[root@ip-10-10-1-113 ~]#` 
     ``` 
     nc -z 192.168.2.100 80 
@@ -166,4 +175,4 @@ To create Load Balancer from EucaLobo:
     >
     > Starting load-balancer-servo   [  OK  ]
 
-In this way, you can connect with load balancer instance of Eucalyptus.
+Now, you are connected with load balancer instance of Eucalyptus.
