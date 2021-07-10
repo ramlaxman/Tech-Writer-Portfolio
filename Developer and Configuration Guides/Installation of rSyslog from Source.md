@@ -1,43 +1,61 @@
-# Installing rSyslog from source
+# Installing rSyslog from source code
 
-### About this Guide
+## About this Guide
 This guide will help you to install rSyslog from its source code on CentOS 7.
 
-### What is rSyslog?
-rSyslog is a log management tool focuses on gathering, monitoring and analyzing logs all across the system. 
+## What is rSyslog?
+`rSyslog` is a log management server focuses on gathering, monitoring and analyzing logs. It gathers various file formats all across the system, transforms them and send the output to different file formats like HDFS (Hadoop), hiredis (Redis). It has capacity of processing of one million messages/second to local destinations.
 
-1. Download rSyslog from [official website of rSyslog]()
-  Extract to desired location
+## Steps to install rSyslog:
+1. Download rSyslog from [official website of rSyslog](https://www.rsyslog.com/files/download/rsyslog/rsyslog-8.2106.0.tar.gz) and extract to desired location.
 
-2. Install first following packages
-I.   libestr(from web)
-II.  libee(from web)
-III. json-c(from web)
-IV.  mysql-server-5.5(from terminal)
-V.   libmysqlclient15-dev(from terminal)
-VI.  uuid(from terminal)
-VII. uuid-dev(from terminal)
+2. Install the following packages:
+  
+    *Hint:* You can use [CentOS packages website](https://centos.pkgs.org/7/centos-x86_64/) for the same.
 
-3. Now,go into rsylog directory and run
-
-  `./configure --enable-mysql`
-  `make`
-
-  It will give error:
-
-  >    /usr/local/include/json/json.h:27:34: fatal error: json_object_iterator.h: No such file or directory compilation terminated.
-
-   Now we have to copy json_object_iterator.h from extracted folder of Json to /usr/local/include/json/. 
-
-   Again issue make command and it will run fine now.
-
-   Issue "make check" to take test of compilation.
-
-   Now run "make install" and then "make installcheck"
-
-   If you do not get any error then congrats rSyslog is installed
-
-   successfully !! 
-   
+   1. libestr
+   2. libee 
+   3. json-c
+   4. mysql-server-5.5
+   5. libmysqlclient15-dev
+   6. uuid
+   7. uuid-dev
 
 
+3. Now, go into rSyslog directory and run:
+
+    ```
+    ./configure --enable-mysql
+    ```
+    ```
+    make
+    ```
+4. Run the following command to install and check for issues, if there are any: 
+   ```
+   make check
+   ``` 
+   ```
+   make install
+   ``` 
+   ```
+   make installcheck
+   ```
+  This concludes successful installation of rSyslog.
+
+<br>
+
+---
+***Note:*** If you are getting error after step 3:
+
+  > /usr/local/include/json/json.h:27:34: 
+  >
+  > fatal error: json_object_iterator.h:
+  >
+  > No such file or directory compilation terminated.
+
+
+Refer to the following steps.
+
+- Copy `json_object_iterator.h` from extracted folder of json to `/usr/local/include/json/`
+
+- Run `make` command and it should run fine.
