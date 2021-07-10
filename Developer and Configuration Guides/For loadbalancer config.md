@@ -49,7 +49,8 @@ To create Load Balancer from EucaLobo:
    ``` 
    getenforce
    ```
-    Disabled
+   Output:
+   > Disabled
 7. `[root@ip-10-10-1-113 ~]#` 
    ```
    iptables -nvL
