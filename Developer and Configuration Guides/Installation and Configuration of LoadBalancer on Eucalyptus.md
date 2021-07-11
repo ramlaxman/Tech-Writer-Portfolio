@@ -1,4 +1,4 @@
-# Install and configure LoadBalancer on Eucalyptus
+# Installation and Configuration of LoadBalancer on Eucalyptus
 
 ### Prerequisites:
 - Minimum 2 running instances
