@@ -1,4 +1,4 @@
-# Installing Python Packages of Nagios and Puppet 
+# Installation of Nagios and Puppet Python Packages
 
 ### About This Guide
 This guide will help you to install client-side version of Nagios and Puppet Python packages on Windows Operating System. It'll help you to access these services from Python interface.
