@@ -121,4 +121,14 @@
 	 web10.hnshostin 10.84.87.146     2 u   27   64    1   26.089   -1.469   1.000
 	 120-88-47-10.in 103.1.106.69     2 u   26   64    1   19.906    6.017   1.272
 	```
-
+	
+	Additional Note:
+	
+	If your account instances support GUI but you're unable to connect with GUI of either Instance-Store or EBS-Based instances, follow the steps:
+	1. Comment these lines from `/etc/ssh/sshd_config`
+	```bash
+	PasswordAuthentication no
+	ChallengeResponseAuthentication no
+	```
+	2. Save the file
+	3. Restart `sshd` service and you can now login to GUI.
