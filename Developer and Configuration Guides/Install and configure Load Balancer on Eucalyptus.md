@@ -1,4 +1,4 @@
-# Installation and Configuration of LoadBalancer on Eucalyptus
+# Install and configure Load Balancer on Eucalyptus
 
 ### Prerequisites:
 - Minimum 2 running instances
@@ -15,6 +15,7 @@ To create Load Balancer from EucaLobo:
      Check availability zones.
    - Ping protocol: TCP
    - Healthy threshold: 3
+
      Rest are same.
 
 **Recommended approach:** *Do not register instances with Load Balancing VM.*
