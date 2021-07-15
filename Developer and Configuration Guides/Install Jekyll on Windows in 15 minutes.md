@@ -10,21 +10,21 @@ Jekyll is a Ruby Gem that can be installed on most systems.
 ### Installation Steps
 
 1. Download and install `Ruby + Devkit latest version (x64).exe` installer for Jekyll installation.
-   
-2. Install the jekyll and bundler gems.
+2. Just press `Enter` when ask for option to install rtsi installer.
+3. Install the jekyll and bundler gems.
     ```
     gem install jekyll bundler
     ```
-3. Create a new Jekyll site at `./myblog`.
+4. Create a new Jekyll site at `./myblog`.
     ```
     jekyll new myblog
     ```
     ![](https://github.com/ramlaxman/Tech-Writer-Portfolio/raw/main/Developer%20and%20Configuration%20Guides/Jekyll%20install%20steps/jek-1.PNG)
-4. Change into your new directory.
+5. Change into your new directory.
     ```
     cd myblog
     ```
-5. Build the site and make it available on a local server.
+6. Build the site and make it available on a local server.
     ```
     bundle exec jekyll serve
     ```
@@ -53,6 +53,6 @@ Now, repeat the step 4.
 
 ![](https://github.com/ramlaxman/Tech-Writer-Portfolio/raw/main/Developer%20and%20Configuration%20Guides/Jekyll%20install%20steps/jek-4.PNG)
 
-6. Browse to http://localhost:4000
+7. Browse to http://localhost:4000
 
 Now, Jekyll website is live on localhost.
