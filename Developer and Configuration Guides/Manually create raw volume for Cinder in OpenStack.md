@@ -1,15 +1,20 @@
 # Manually create raw volume for Cinder in OpenStack
 
 ### About this tutorial
-Cinder is volume block service of OpenStack private cloud platform. In this tutorial, we'll see how to assign hard disk space, as a storage, to create volume in Cinder.
+Cinder is volume block service of OpenStack private cloud platform. In this tutorial, we'll see how to assign hard disk space, as a storage, to Cinder.
 
 ### Installation
 
-We need to some free space available for Cinder volume service. Now I have 145 GB free space, to make it accessible I have done following things:
+1. To check the free space available on the hard disk, run following command: 
+    ```
+    df -h
+    ```
 
-Create free space by using tools in Ubuntu like `GParted`, `Disks`. To do so, follow the steps:
+2. In order to create partition of this free space we'll use GUI tools in Ubuntu like `GParted`, `Disks`.
 
-1. Go to Ubuntu Explorer by pressing `Alt`+`F2` - Disks.
+    In this example, we've used `Disks` for create and format hard disk partition.
+
+1. Go to `Ubuntu Explorer` by pressing `Alt`+`F2` - Disks.
 2. Select the free space as per your requirement.
 3. Click on `+` icon.
 4. Choose Following parameters:
