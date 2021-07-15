@@ -12,7 +12,7 @@ Cinder is volume block service of OpenStack private cloud platform. In this tuto
 
 2. In order to create partition of this free space we'll use GUI tools in Ubuntu like `GParted`, `Disks`.
 
-    In this example, we've used `Disks` for create and format hard disk partition.
+   In this example, we've used `Disks` for create and format hard disk partition.
 
 3. Go to `Ubuntu Explorer` by pressing `Alt`+`F2` - Disks.
 4. Select the free space as per your requirement.
