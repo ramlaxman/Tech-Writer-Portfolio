@@ -26,9 +26,10 @@ Cinder is volume block service of OpenStack private cloud platform. In this tuto
     ```
     Now, you will have `cinder-volumes` named partition which is unmounted.
 
-    Note that this line: `Device /dev/sda3` might be different as per configurations and devices.
-
-7. To mount the partition, go to Terminal as root user.
+7. To mount the partition, go to Terminal and login as `root` user.
+   
+   Note that this line: `Device /dev/sda3` might be different as per configurations and devices.
+   
 8. Run this command:
     ```
     pvcreate /dev/sda3 \
