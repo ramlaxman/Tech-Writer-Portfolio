@@ -46,7 +46,7 @@ Jekyll is a Ruby Gem that can be installed on most systems.
 > 
 > ![](https://github.com/ramlaxman/Tech-Writer-Portfolio/raw/main/Developer%20and%20Configuration%20Guides/Jekyll%20install%20steps/jek-3.PNG)
 > 
-> If you're interested in more detail, you can check [this issue on StackOverflow](https://github.com/jekyll/jekyll/issues/8523#issuecomment-751409319)
+> If you're interested in more detail, you can check this GitHub [issue](https://github.com/jekyll/jekyll/issues/8523#issuecomment-751409319)
 >  
 
 Now, repeat the step 4.
