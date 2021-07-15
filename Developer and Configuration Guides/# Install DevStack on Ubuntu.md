@@ -1,4 +1,4 @@
-﻿# Installation of DevStack on Ubuntu
+# Install DevStack on Ubuntu
 
 ## About this guide
 DevStack is an single box installation of necessary services of OpenStack in order to test and develop OpenStack services and applications.
