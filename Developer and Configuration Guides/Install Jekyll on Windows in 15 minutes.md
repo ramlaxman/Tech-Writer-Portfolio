@@ -7,35 +7,52 @@ Jekyll is a Ruby Gem that can be installed on most systems.
 - `RubyGems` (check your Gems version using gem -v)
 - `GCC` and `Make` (check versions using gcc -v,g++ -v, and make -v)
 
-1. Install the jekyll and bundler gems.
+### Installation Steps
+
+1. Download and install `Ruby + Devkit latest version (x64).exe` installer for Jekyll installation.
+   
+2. Install the jekyll and bundler gems.
     ```
     gem install jekyll bundler
     ```
-2. Create a new Jekyll site at `./myblog`.
+3. Create a new Jekyll site at `./myblog`.
     ```
     jekyll new myblog
     ```
-3. Change into your new directory.
+    ![](https://github.com/ramlaxman/Tech-Writer-Portfolio/raw/main/Developer%20and%20Configuration%20Guides/Jekyll%20install%20steps/jek-1.PNG)
+4. Change into your new directory.
     ```
     cd myblog
     ```
-4. Build the site and make it available on a local server.
+5. Build the site and make it available on a local server.
     ```
     bundle exec jekyll serve
     ```
-5. Browse to http://localhost:4000
+    ![](https://github.com/ramlaxman/Tech-Writer-Portfolio/raw/main/Developer%20and%20Configuration%20Guides/Jekyll%20install%20steps/jek-2.PNG)
 
-    > Note: On Windows, you will get error message as follows: 
-    ```
-    C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/jekyll-4.2.0/lib/jekyll/commands/serve/servlet.rb:3:in `require': cannot load such file -- webrick (LoadError)
-    ```
-    To resolve this issue, simply run following command on Windows:
+---
+>
+> **Note:** 
+>  
+> After step 4, you'll get an error message as follows: 
+> ```
+> C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/jekyll-4.2.0/lib/jekyll/commands/serve/servlet.rb:3:in `require': cannot load such file --webrick (LoadError)
+> ```
+> To resolve this issue, simply run following command in command prompt:
+> 
+> `C:\> bundle add webrick`
+> 
+> It'll install gem for webrick.
+> 
+> ![](https://github.com/ramlaxman/Tech-Writer-Portfolio/raw/main/Developer%20and%20Configuration%20Guides/Jekyll%20install%20steps/jek-3.PNG)
+> 
+> If you're interested in more detail, you can check [this issue on StackOverflow](https://github.com/jekyll/jekyll/issues/8523#issuecomment-751409319)
+>  
 
-    `C:\> bundle add webrick`
+Now, repeat the step 4.
 
-    If you're interested in more details, you can check (here
+![](https://github.com/ramlaxman/Tech-Writer-Portfolio/raw/main/Developer%20and%20Configuration%20Guides/Jekyll%20install%20steps/jek-4.PNG)
 
-    It'll install gem for webrick.
+6. Browse to http://localhost:4000
 
-    Now rerun step 4 and 
-
+Now, Jekyll website is live on localhost.
