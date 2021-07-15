@@ -10,7 +10,7 @@ Jekyll is a Ruby Gem that can be installed on most systems.
 ### Installation Steps
 
 1. Download and install **`Ruby + Devkit latest version (x64).exe`** installer for Jekyll installation.
-2. Just press `Enter` when ask for option to install **`ridk install`**.
+2. Just press `Enter` when ask to install **`ridk`** for `[1,3]` option.
 3. Install the jekyll and bundler gems.
     ```
     gem install jekyll bundler
