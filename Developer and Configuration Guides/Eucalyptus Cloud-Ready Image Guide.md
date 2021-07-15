@@ -1,4 +1,4 @@
-# Eucalyptus Cloud Ready Image Guide
+# Eucalyptus Cloud-Ready Image Guide
 
 <!---* first level A item - no space in front the bullet character
   * second level Aa item - 1 space is enough

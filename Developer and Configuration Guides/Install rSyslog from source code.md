@@ -1,4 +1,4 @@
-# Installing rSyslog from source code
+# Install rSyslog from source code
 
 ## About this Guide
 This guide will help you to install rSyslog from its source code on CentOS 7.
