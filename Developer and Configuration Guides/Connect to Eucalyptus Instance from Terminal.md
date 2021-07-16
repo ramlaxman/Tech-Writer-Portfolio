@@ -155,7 +155,7 @@ Edit file with ```Hello World!``` and save.
   
   Additional Note:
   
-If your account instances support GUI but you're unable to connect with GUI of either Instance-Store or EBS-Based instances, follow the steps:
+If your account instances support GUI but you're unable to connect with GUI of either Instance-Store or EBS-Based instances, follow these steps:
 
 1. Comment these lines from `/etc/ssh/sshd_config`
 
