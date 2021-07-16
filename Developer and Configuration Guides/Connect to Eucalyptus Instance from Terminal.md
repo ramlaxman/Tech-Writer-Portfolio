@@ -1,24 +1,28 @@
 # Connect to Eucalyptus Instance from Terminal
 
-1.  `[root@localhost Downloads]#`
-	```
-	ssh -i admin.pem root@192.168.2.103
-	```
-    **Output:**
-    > The authenticity of host '192.168.2.103 (192.168.2.103)' can't be established. 
-	>
-	> RSA key fingerprint is 52:36:5b:1a:dd:62:fb:56:a7:92:99:5a:92:e1:29:27.
-	> 
-	> Are you sure you want to continue connecting (yes/no)? yes
-	> 
-	> Warning: Permanently added '192.168.2.103' (RSA) to the list of known hosts.
+1. `[root@localhost Downloads]#`
 
-2.	`[root@ip-10-10-1-113 ~]#`
-	```
-	yum install httpd nc wget ntp
-	```
+ ```sh
+ ssh -i admin.pem root@192.168.2.103
+ ```
 
-3.  `[root@ip-10-10-1-113 ~]#` 
+  > **Output:**
+  >
+  > The authenticity of host '192.168.2.103 (192.168.2.103)' can't be established. 
+  >
+  > RSA key fingerprint is 52:36:5b:1a:dd:62:fb:56:a7:92:99:5a:92:e1:29:27.
+  > 
+  > Are you sure you want to continue connecting (yes/no)? yes
+  > 
+  > Warning: Permanently added '192.168.2.103' (RSA) to the list of known hosts.
+
+2. `[root@ip-10-10-1-113 ~]#`
+  
+  ```sh
+  yum install httpd nc wget ntp
+  ```
+
+3. `[root@ip-10-10-1-113 ~]#` 
 	```
 	vi /var/www/html/index.html
 	```

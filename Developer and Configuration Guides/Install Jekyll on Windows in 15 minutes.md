@@ -2,13 +2,13 @@
 
 Jekyll is a Ruby Gem that can be installed on most systems.
 
-### Requirement
+## Requirement
 
 - `Ruby` version 2.4.0 or higher, including all development headers (check your Ruby version using ruby -v)
 - `RubyGems` (check your Gems version using gem -v)
 - `GCC` and `Make` (check versions using gcc -v,g++ -v, and make -v)
 
-### Installation Steps
+## Instructions
 
 1. Download and install **`Ruby + Devkit latest version (x64).exe`** installer for Jekyll installation.
 2. Just press `Enter` when ask to install **`ridk`** for `[1,3]` option.
