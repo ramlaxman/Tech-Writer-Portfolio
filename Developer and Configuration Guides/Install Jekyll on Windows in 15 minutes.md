@@ -21,7 +21,7 @@ Jekyll is a Ruby Gem that can be installed on most systems.
 4. Create a new Jekyll site at `./myblog`.
 
     ```sh
-        jekyll new myblog
+    jekyll new myblog
     ```
 
     ![Jekyll Run](https://github.com/ramlaxman/Tech-Writer-Portfolio/raw/main/Developer%20and%20Configuration%20Guides/Jekyll%20install%20steps/jek-1.PNG)
@@ -48,7 +48,7 @@ Jekyll is a Ruby Gem that can be installed on most systems.
 >  
 > After step 4, you'll get an error message as follows:
 >
-> ```powershell
+> ```sh
 > C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/jekyll-4.2.0/lib/jekyll/commands/serve/servlet.rb:3:in `require': cannot load such file --webrick (LoadError)
 > ```
 >
