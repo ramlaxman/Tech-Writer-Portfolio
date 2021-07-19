@@ -340,11 +340,3 @@ Orchestration — Kubernetes, Swarm, Mesos
 Software deployment — Elastic Beanstalk, Octopus, Vamp
 Measurement — NewRelic, Kibana, Datadog, DynaTrace
 ChatOps — Hubot, Lita, Cog
-
-
-
-
-
-
-
-             
