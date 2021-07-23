@@ -71,5 +71,8 @@ p = 6
 `constant`: not to compute or recompute value for whole lifetime of program \
 `named constant`: name that you have given to constant
 
-<h4 id="1">References</h4>
+---
+<h4 id="1">
+References
+</h4>
 [1] Stroustrup, Bjarne. A Tour of C++. Addison-Wesley Professional, 2018.
