@@ -1,4 +1,4 @@
-# How to Propose Your Job Role
+# How to Propose Your Own Job Role
 
 Recently I've applied at one of education oriented company of Maharashtra state government. It's been a great experience to propose your own job role for such a esteemed position.
 
