@@ -1,35 +1,43 @@
 # What is DevOps
 
-## DevOps Quest
-Today almost every engineer is familiar with this word but few of them know the crux of it. The interviews, that I read online and my friends told me about, give idea that organization looking for DevOps roles are 
-missing the basic instinct of it. Most of the interviewers focus on python programming concepts or AWS solution architect questions, judge candidate from these questions. Real story for need of a DevOps engineer is quite different.
+## About this article
 
-## What in actual DevOps is?
+This article is targeted for organizational approach towards DevOps and bridging the gap between expectations and variance in DevOps role.
 
-DevOps is a type of SDLC (Software Development Life Cycle). Many people argue on this but if you look at its phases, it covers all stages from planning to release covered in other types of SDLC like agile, waterfall. In simple  words, you need to understand all tools and technologies that contribute in software development process.
+## Role of DevOps
 
-For example, let's see phase of planning. For this, you must know how to use git, how to send and update commits between git client and github.com. In short, you need to have knowledge of git in terms of GUI and CLI as well to master the planning phase. In similar way, you need to learn about several tools and technologies related to other phases.
+Today, almost every computer engineer is familiar with the term DevOps but only some of them know the crux of it. What I know from the candidates' interview experiences, which are posted online and discussed with DevOps engineers, is organizations are somehow missing the basic ideology. That's why most of the interviewers are focusing only on either python programming or AWS solution architect questions to test and evaluate knowledge of the candidates while the real story is a bit different.
 
-In summary, it is simple yet persistence is required to get into DevOps. Following are my recommendations if you're getting into DevOps:
+## What should be the DevOps?
 
-- Plan - Version Control Systems like Git, Mercurial, Bitbucket.
+It can be defined as *DevOps is a set of practices, including both development and operational aspects for managing the infrastructure, which helps to achieve agility in dynamic environment for rapid and sustainable software development.* In simple terms, DevOps is a type of SDLC (Software Development Life Cycle). Its phases ranges from `plan` to `release` similar to that of Agile, Waterfall. Here, interesting thing is one can use and modify required phases of DevOps life cycle as per need of the project.
+
+Generally, phases in DevOps are `plan`, `code`, `build`, `test`, `release`, `operate` and `monitor`. For example, in the phase of `planning`, you must know how to use Git, how to send and update commits between Git client and `GitHub.com`. In short, you need to have knowledge of git in terms of GUI and CLI to master the `planning` phase. In similar way, you need to learn about several tools and technologies related to other phases.
+
+In simple words, you need to understand all tools and technologies that are associated with software development process during DevOps.
+
+It is simple but persistence efforts are required to acquire the skill-sets for DevOps role. 
+
+You can check some recommendations if you're getting into DevOps:
+
+- **Plan** - Version Control Systems like `Git`, `Mercurial`, `Bitbucket` etc
   
-- Code - Python is preferred still one can use Shell and Golang.
+- **Code** - `Python` is preferred still one should also know `Shell` and `Golang`
 
-- Build - Ant, Maven like frameworks.
+- **Build** - `Ant`, `Maven` like frameworks
 
-- Test - Selenium, testing framework or Pytest like native test library.
+- **Test** - `Selenium` like testing framework or `Pytest` like native test library
 
-- Release - Jenkins, CI/CD tool or AWS Pipeline like web services. 
+- **Release** - `Jenkins` like CI/CD tool or `AWS CodePipeline` like web services for release management
 
-- Deploy - Ansible or Chef like infrastructure automation tools
+- **Deploy** - `Ansible` or `Chef` like infrastructure automation tools
 
-- Operate - Docker or K8s for infrastructural operations
+- **Operate** - `Docker` or `K8s` (Kubernetes) for infrastructural operations
 
-- Monitor - Nagios like infrastructure monitoring tool
+- **Monitor** - `Nagios` for infrastructure monitoring tool
 
 
-## DevOps is not:
+## DevOps is not
 
 - Python Developer who'll learn all tools overnight
 - Software engineer trying to become Site Reliability Engineer
@@ -37,7 +45,10 @@ In summary, it is simple yet persistence is required to get into DevOps. Followi
 - Someone who can't pickup operational part quickly and effectively
 - One who is not interested in system administration and only writing the code.
 
-A career shift
+## What does DevOps engineer do?
+
+DevOps engineer cares about SDLC and its principles rather than just learning the tools. For example, if some developer needs to test new software over mongodb for which you don't have dedicated infrastructure available due to budget restrictions but clients needs to check fault tolerance of that application. In such a case, Docker comes to the rescue. Launching multiple Docker containers on cloud based or on-premise infrastructure help to understand fault tolerance of that application. In this case, DevOps engineer should follow practice of 
+
 
 Here are a few things you should do to begin positioning yourself as a DevOps engineer.
 

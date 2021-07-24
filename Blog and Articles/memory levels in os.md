@@ -1,4 +1,5 @@
 Memory levels in Linux operating system
+
 Definitions
 
 High Memory: Memory for which logical addresses do not exist because it is beyond address range set aside for kernel virtual addresses.
