@@ -56,6 +56,6 @@ In general, some of the requirements for DevOps engineer are:
 I hope this short article gives you good idea about DevOps profile expectations and variance from organization and job seeker point of view.
 
 ---
-Let me know about your feedback on this over email.
+Let me know about your feedback over the email.
 
 And don't forget to subscribe to my newsletter, [It's about CSE](https://tinyletter.com/mayurp7), for exciting contents and news in the world of computer science.
