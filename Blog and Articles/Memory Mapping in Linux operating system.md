@@ -1,7 +1,7 @@
-Memory levels in Linux operating system
+# Memory Mapping in Linux operating system
 
 Definitions
-
+    
 High Memory: Memory for which logical addresses do not exist because it is beyond address range set aside for kernel virtual addresses.
 Low Memory: Memory for which logical addresses exist in kernel space. On almost every system you’ll likely encounter, all memory is low memory.
 
