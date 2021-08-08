@@ -1,10 +1,13 @@
-Modules vs Packages vs Libraries in Python
+# Modules vs Packages vs Libraries in Python
+
 Differences essential to understand
 
 The terms ‘module’, ‘package’ & ‘library’ are defined differently by different programming languages. This may cause some confusion for programmers switching from one language to another.
 
 Here’s how these three terms are used in context of python:
-Module
+
+## Module
+
 Simply put, a module in python is a .py file that defines one or more function/classes which you intend to reuse in different codes of your program.
 
 To reuse the functions of a given module you simply need to import the module using:
@@ -16,23 +19,26 @@ As regards the module name, Python treats the file name as the module names.
 
 By default, the name of the  module is stored in the name space as a string type. The module name can be called within the module  by calling the global variable __name__.
 
-Package
+## Package
 A Python package refers to a directory of Python module(s). This feature comes in handy for organizing modules of one type at one place. A python package is normally installed in:
 
-/usr/lib/python/site-packages # for linux
-C:/Python27/Lib/site-packages/ # for windows
+/usr/lib/python/site-packages # for Linux
+
+C:/Python3/Lib/site-packages/ # for Windows
+
 To use the package in a script, you will have to first initialize the package using:
 
-mypackage/__init__.pymypackage/mymodule.py
+`mypackage/__init__.pymypackage/mymodule.py` 
+
 You can then import the package
 
-import mypackage.mymodule
-
+`import mypackage.mymodule`
 or
+`from mypackage.mymodule import myclass`
 
-from mypackage.mymodule import myclass
 In addition to creating ones own packages, Python is home a large and growing collection of packages (from individual programmers) which is available from the Python Package Index.
-Library
+
+## Library
 Library is the place which helps us to maintain collections of different books. In the similar way, in python, there is a collection of specific syntax, token and semantics in order to perform specific tasks in Python.
 
 Unlike C or C++, the term library does not have any specific contextual meaning in p\Python. When used in Python, a library is used loosely to describe a collection of the core modules.
