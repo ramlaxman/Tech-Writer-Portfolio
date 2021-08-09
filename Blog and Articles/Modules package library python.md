@@ -2,12 +2,14 @@
 
 Differences essential to understand
 
-The terms ‘module’, ‘package’ & ‘library’ are defined differently by different programming languages. This may cause some confusion for programmers switching from one language to another.
+The terms ‘module’, ‘package’ & ‘library’ have different meaning as per type of programming language. Though developers use these terms interchangeably as per convenience, each term has its significance in its own context.
+
 
 Here’s how these three terms are used in context of python:
 
 ## Module
 
+A self-contained component (unit or item) that is used in combination with other components. 
 Simply put, a module in python is a .py file that defines one or more function/classes which you intend to reuse in different codes of your program.
 
 To reuse the functions of a given module you simply need to import the module using:
@@ -20,6 +22,8 @@ As regards the module name, Python treats the file name as the module names.
 By default, the name of the  module is stored in the name space as a string type. The module name can be called within the module  by calling the global variable __name__.
 
 ## Package
+
+Something we call from outside.  Take an example of 
 A Python package refers to a directory of Python module(s). This feature comes in handy for organizing modules of one type at one place. A python package is normally installed in:
 
 /usr/lib/python/site-packages # for Linux
