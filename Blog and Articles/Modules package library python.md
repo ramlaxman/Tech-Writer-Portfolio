@@ -1,79 +1,88 @@
 # Modules vs Packages vs Libraries in Python
 
-Differences essential to understand
-
-The terms ‘module’, ‘package’ & ‘library’ have different meaning as per type of programming language. Though developers use these terms interchangeably as per convenience, each term has its significance in its own context.
-
-Here’s how these three terms are used in context of python:
+Generally, object oriented programming languages have some common terms such as `'module'`, `'package'` and `'library'`. Though developers use these terms interchangeably as per convenience, each term has its meaning.
 
 ## Module
 
-If we see a dictionary meaning, Module is a self-contained component (unit or item) that is used in combination with other components. Simply put, a module in python is a .py file that defines one or more function/classes which you intend to reuse in different codes of your program.
+As per dictionary meaning, `module` is a self-contained component (unit or item) which is used in combination with other components. In Python, a module is a `.py` file that defines one or more function or classes which intend to reuse in different codes of an program or softwares.
 
-To reuse the functions of a given module you simply need to import the module using:
+To reuse the functions of a given module, we simply need to import the module using:
 
 ```py
-import <modulename> # to import the entire module
-
-from <modulename> import <classname> # imports a class from a module
+- import <modulename> # to import the entire module
+- from <modulename> import <classname> # imports a class from a module
 ```
 
-Python interpreter treats the filename as the module name. 
-
-Internally, the name of the  module is stored in the namespace as a string type. The module name can be called within the module by calling the global variable `__name__`.
+Python interpreter treats the filename as the module name. Internally, the name of the module is stored in the namespace as a string type. The module name can be called within the module by calling the global variable `__name__`.
 
 ## Package
 
-Something we call from outside.  Take an example of courier parcel we order from Internet. It's a third party entity. 
-A Python package refers to a directory of Python module(s). This feature comes in handy for organizing modules of one type at one place. A python package is normally installed in:
+Suppose, you placed an order for a potato chips. When you received chips, it was wrapped in the package. You opened it and found your chips packet inside the package. In short, you received the `package` of chips. From this example, we can tell `package` is an entity that holds other data or items inside of it. In the similar way, Python package refers to a directory of Python module(s). This feature comes handy for organizing modules of one type at one place. A python package is normally installed at following locations:
 
-/usr/lib/python/site-packages # for Linux
+- Linux: `/usr/lib/python/site-packages`
+- Windows: `C:/Python3/Lib/site-packages/`
 
-C:/Python3/Lib/site-packages/ # for Windows
+We can see this image of `jinja2` package with several `.py` files:
 
-To use the package in a script, you will have to first initialize the package using:
+![Example of Jinja2 package](https://raw.githubusercontent.com/ramlaxman/Tech-Writer-Portfolio/main/images/Package%20in%20Python.png)
+
+To use the package in a script, we will have to first initialize the package using:
 
 `mypackage/__init__.pymypackage/mymodule.py` 
 
-You can then import the package
+we can then import the package:
 
 `import mypackage.mymodule`
 or
 `from mypackage.mymodule import myclass`
 
-In addition to creating ones own packages, Python is home a large and growing collection of packages (from individual programmers) which is available from the Python Package Index.
+In addition to this, Python is now a powerhouse of large and increasing collection of packages, available at the [Python Package Index](https://pypi.org/).
 
 ## Library
 
-Library is the place which helps us to maintain collections of different books. In the similar way, in python, there is a collection of specific syntax, token and semantics in order to perform specific tasks in Python.
+In general, we know that library is the place which helps to maintain collections of different books. Similarly, in Python, it is collection of specific syntax, token and semantics intended to perform dedicated tasks.
 
-Unlike C or C++, the term library does not have any specific contextual meaning in p\Python. When used in Python, a library is used loosely to describe a collection of the core modules.
+Library term does not have fixed meaning in Python. It can be the collection of some core modules or group of Python source files for performing dedicated functions. Hence, library is blurred term to define compare to modules and packages. 
 
-The term ‘standard library‘ in Python language refers to the collection of exact syntax, token and semantics of the Python language which comes bundled with the core Python distribution.
+`Python standard library`: It is set of libraries that comes with core Python setup. It aims at providing specific functionality to programmers. Also, it does not require separate download and install. For example, `string` , `os`. Libraries contain core modules are written in C languages which are targeted towards system level  functionality.
 
-In Python, the standard library is written in C language and it handles the standard functionalities like file I/O and other core modules that make Python what it is. The python standard library lists down more than 200 such core modules that form the core of Python.
+`Third party library`: Python also supports additional libraries, written in Python, that provide extra features and functionalities apart from Python standard library. In more general manner, we can call them as `pacakges`.
+Note that these libraries require separate download and installation. Check [Python package index](https://pypi.python.org) for more details.
 
-“Additional libraries” refer to those optional components that are commonly included in Python distributions.
+**Some tips:**
 
-The Python installers for the Windows automatically adds the standard library and some additional libraries.
+1. Do not install libraries using Python source code unless you're testing against current version of Python or operating system environment.  
 
-For Unix-like operating systems, the additional library is generally provided as a collection of packages. In Unix Os, one may have to use packaging tools like easyinstall or pip to use these additional libraries.
+2. Before installing with `pip`, check with the package site which Python version it supports.
 
-Don't go by the route of Python Source code unless you are digging into code. i.e. compilation and installation.
-Use .whl files for installation with command. C:/> pip install flask****.whl
-Before installing with pip, check with the site which Python version it supports.
-Install egg files with : easy_install -Z pygame-*.egg
+3. Installation using `pip`
 
-Installing with pip
+   Consider, we want to install `pymongo`, a python client for MongoDB. Following are some operations, we can perform using `pip`:
 
-We recommend using pip to install pymongo on all platforms:
-$ python -m pip install pymongo
+   To install latest version
+   ```powershell
+   $ python -m pip install pymongo
+   ```
 
-To get a specific version of pymongo:
-$ python -m pip install pymongo==3.1.1
+   To get a specific version of pymongo
+   ```powershell
+   $ python -m pip install pymongo==3.1.1
+   ```
 
-To upgrade using pip:
-$ python -m pip install --upgrade pymongo
+   To upgrade pymongo
+   ```powershell
+   $ python -m pip install --upgrade pymongo
+   ```
 
-To uninstall
-$ python -m pip uninstall pymongo
+   To uninstall
+   ```powershell
+   $ python -m pip uninstall pymongo
+    ```
+
+4. Use `.whl` files for installation if there is no Internet access:
+
+```py
+C:/> pip install Flask-2.0.1-py3-none-any.whl
+```
+
+Thanks for reading.
