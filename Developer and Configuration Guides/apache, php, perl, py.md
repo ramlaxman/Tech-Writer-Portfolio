@@ -1,4 +1,4 @@
-# CONFIGURE YOUR OWN WAMP Server
+# Configure Your Own WAMP Server
 
 ## 1. INSTALL & CONFIGURE PHP
 
