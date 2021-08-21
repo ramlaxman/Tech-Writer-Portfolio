@@ -58,4 +58,4 @@ Refer to the following steps.
 
 - Copy `json_object_iterator.h` from extracted folder of json to `/usr/local/include/json/`
 
-- Run `make` command and it should run fine.
+- Run `make` command again and it should run fine.
