@@ -1,6 +1,6 @@
 # Modules vs Packages vs Libraries in Python
 
-Generally, object oriented programming languages have some common terms such as `'module'`, `'package'` and `'library'`. Though developers use these terms interchangeably as per convenience, each term has its meaning.
+Generally, object oriented programming languages have some common terms such as `module`, `package`, `library` etc. Though developers use these terms interchangeably as per convenience, each term has its meaning. We'll see details and relation with Python in this article.
 
 ## Module
 

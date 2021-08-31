@@ -4,15 +4,13 @@
 
 `Step 1:`
 
-At the time of writing this guide, PHP 8.0.9 is latest stable version available.Download preferred PHP binary zip file from https://windows.php.net. There are two types of zip files available: *Thread Safe* and *Non-thread Safe*. We'll use `thread safe version` for our guide. 
+At the time of writing this guide, `PHP 8.0.9` is latest stable version available. Download preferred PHP binary zip file from [Windows PHP](https://windows.php.net). There are two types of zip files available: *Thread Safe* and *Non-thread Safe*. We'll use `thread safe version` for our guide. To know more about difference, visit [Microsoft Docs](https://docs.microsoft.com/en-us/iis/application-frameworks/install-and-configure-php-on-iis/install-and-configure-php).
 
-To know more about difference, visit [Microsoft Docs](https://docs.microsoft.com/en-us/iis/application-frameworks/install-and-configure-php-on-iis/install-and-configure-php).
-
-Open the zip file & Extract all your files to C:\server\php. Navigate to C:\server\php 
+Open the zip file and extract its contents to folder `C:\server\php`. Navigate to `C:\server\php`.
 
 `Step 2:`
 
-Rename php.ini- file. Search for the file, php.ini-development and rename it to php.ini 
+Rename php.ini- file. Search for the file, `php.ini-development` and rename it to `php.ini`
 
 `Step 3:`
 EDIT php.ini. Open up php.ini using any text-editor.(Notepad++,Preferably Dreamweaver).  There are 2 edits in this file 
