@@ -1,11 +1,12 @@
 # Configure Your Own WAMP Server on Windows
 
-## 1. Install and Configure PHP
+## A. Install and Configure PHP
 
-### 1.1 Download and extract PHP
+### A.1 Download and extract PHP
 
 At the time of writing this guide, PHP 8.0.9 was the latest stable version available. Download preferred PHP binary zip file from https://windows.php.net. There are two types of zip files available: 
-- *Thread Safe* 
+
+- *Thread Safe*
 - *Non-thread Safe*. 
 
 We'll use `thread safe version` for our guide.
@@ -14,11 +15,11 @@ To know more about the difference, visit [PHP configuration instructions for IIS
 
 After downloading, open the zip file and extract all your files to C:\server\php. Navigate to C:\server\php.
 
-#### 1.2.1 Rename php.ini
+#### A.1.1 Rename php.ini
 
 Search for the file, `php.ini-development` and rename it to `php.ini`.
 
-#### 1.2.2 EDIT php.ini
+#### A.1.2 EDIT php.ini
 
 Open up `php.ini` using any text-editor.
 
@@ -47,68 +48,114 @@ The Third and forth enables us to use MySQL database where `php_mysql` is for ba
 
 Save the php.ini file. 
 
-### 1.3  Adding PHP Environmental Variables in the System path. 
-Great! Now we have to add tell the computer to start php every time the computer reboots.
- So, Navigate to your Start->Control Panel->System->Advanced System Settings then go to the advanced tab, Click on the Environmental Variables button, then scroll down in system variables to find PATH, Edit it Add the following Code to it, [ C:\server\php; ] 
- OR 
- Right click on My Computer->Properties->Advanced->environmental variables->System variables->Path. Add C:\server\php; at the starting. 
-Step 5: 
- You MUST MUST MUST reboot a windows box after setting the Path variable (step 2). If you move on past that point without rebooting – logging off is NOT enough – apache will have trouble finding your mySQL extensions. 
-Finally, Step 2 is over !. Now we have PHP configured. Lets move on to configuring Apache.  [B] Configuring Apache HTTP Server 2.2.17  
- Before this, you need to know there are two servers developed by apache software foundation: apache tomcat server and apache http server. In year 2011,
+### A.2  Adding PHP Environmental Variables in the System path. 
 
-## Apache Tomcat 7.0.6 and Apache HTTP server 2.2.17. 
+Go to your `Start Menu Icon`->`Control Panel`->`System`->`Advanced System Settings`. Then go to `Advanced` tab, Click on the `Environmental Variables` button. Inside `System variables` select `PATH` variable and append at last the path of PHP folder, in our case,C:\server\php; 
 
-`Step 1:`
+> Note: Dont't forget the semicolon
 
-Now navigate to C:\server\Apache\conf 
- OK, brace yourself; we got 5 Edits in this file. No big deal,  
-Pretty simple search and replace text. 
- 1 
- Search for-> 
- #LoadModule rewrite_module modules/mod_rewrite.so 
- Replace with-> 
- LoadModule rewrite_module modules/mod_rewrite.so 
- Edit 2 
- Add the following below the previous edit-> 
- #PHP5 
- LoadModule php5_module "C:/server/php/php5apache2_2.dll" 
- PHPIniDir "C:/server/php"
-Edit 3 
- Search-> 
- AddType application/x-gzip .gz .tgz 
- Add the following below the searched line-> 
- AddType application/x-httpd-php .php 
- AddType application/x-httpd-php-source .phps 
- Note: Don't add hash(#) symbol at starting of these two lines.  Edit 4 
- Search for-> 
- DirectoryIndex index.html 
- Replace with-> 
- DirectoryIndex index.html index.php index.py index.pl index.shtml  Edit 5 
- Search for-> 
- #Include conf/extra/httpd-vhosts.conf 
-Replace with->  
- Include conf/extra/httpd-vhosts.conf 
- Step 2 
- Now navigate to C:\server\Apache\conf\extra  
- Edit httpd-vhosts.conf 
- Step 3  
- Replace all the text inside with 
- <virtualhost *:80> 
- DocumentRoot "C:/Server/www/myserver.dev/public_html"  ServerName myserver.dev 
- ServerAlias www.myserver.dev 
- <directory "C:/Server/www/myserver.dev/public_html">  AllowOverride All 
- Options Indexes FollowSymLinks 
- Order allow,deny 
- Allow from all 
- </directory>
- </virtualhost> 
- Now,Restart the Apache Webserver 
- If you have followed perfectly you`ll see that Apache has restarted perfectly with some error message do not take it into consideration. 
+OR
+
+Right click on `My Computer` -> `Properties` -> `Advanced` -> `Environmental variables` -> `System variables` -> `Path`. Append 
+`C:\server\php;` at the end of the line.
+
+### A.3 Reboot your system
+
+You should reboot the system after setting up the Path variable. 
+
+>> Warning: If you move on past to this point without rebooting, you might face issue of Apache HTTP server connections your mySQL extensions. 
+
+With completion of PHP configuration, let's move onto configuring Apache HTTP server.  
+
+## 2. Install and configure Apache HTTP Server
+
+Before starting for actual configuration, you need to know two servers developed by apache software foundation: Apache Tomcat and Apache HTTP. We'll use Apache HTTP server for this setup.
+
+### 2.1 Configure Apache HTTP conf file
+
+Now navigate to `C:\server\Apache\conf`. Now, brace yourself. We have five Edits in this file. No big deal, pretty simple. Just search and replace text.
+
+#### 2.1.1 Uncomment modules library
+
+Search for
+
+`#LoadModule rewrite_module modules/mod_rewrite.so`
+
+Replace with
+
+```
+LoadModule rewrite_module modules/mod_rewrite.so 
+```
+
+#### 2.1.2 Add PHP module library and setup folder
+
+Add the following below the previous edit.
+
+```
+#PHP5LoadModule php5_module "C:/server/php/php5apache2_2.dll" 
+```
+```
+PHPIniDir "C:/server/php"
+```
+
+#### 2.1.3 Add PHP supported extensions
+
+Search for
+
+`AddType application/x-gzip .gz .tgz`
+
+Below to this line, add the following lines:  
+```
+AddType application/x-httpd-php .php
+AddType application/x-httpd-php-source .phps
+```
+
+> Note: Don't add hash `#` symbol at starting of these two lines.
+
+#### 2.1.4 Add web based languages file extensions
+
+Search for 
+
+`DirectoryIndex index.html`
+
+replace with
+```
+DirectoryIndex index.html index.php index.py index.pl index.shtml
+```
+
+#### 2.1.5 
+
+Search for
+
+`#Include conf/extra/httpd-vhosts.conf`
+
+Replace with
+```
+Include conf/extra/httpd-vhosts.conf
+```
+
+### 2.2 Virtualhost Setup
+Now navigate to `C:\server\Apache\conf\extra` and edit `httpd-vhosts.conf`. Replace all the text inside of `httpd-vhosts.conf` with following XML code:
+
+```xml
+<virtualhost *:80> 
+DocumentRoot "C:/Server/www/myserver.dev/public_html"  ServerName myserver.dev 
+ServerAlias www.myserver.dev 
+<directory "C:/Server/www/myserver.dev/public_html">  AllowOverride All 
+Options Indexes FollowSymLinks 
+Order allow,deny 
+Allow from all 
+</directory>
+</virtualhost> 
+```
+
+Now, restart the Apache HTTP server. If you've followed perfectly all steps, you`ll see that Apache has restarted perfectly with 
+
+> httpd.exe: could not reliably determine the server's fully qualified domain name using 127.0.0.1 for servername
 Step 4  
 Testing our Apache + PHP 
  1. Create Directories to store your web files 
- 1. Firstly lets make the required Directories. Create a New Folder inside C:\server.  2. Inside the C:\server folder, create folder called www 
+ 2. Firstly lets make the required Directories. Create a New Folder inside C:\server.  2. Inside the C:\server folder, create folder called www 
  3. inside C:\server\www\ create myserver.dev 
  4. and then finally create public_html folder inside your C:\server\www\myserver.dev\  
  Follow this structure C:\server\www\myserver.dev\public_html\ 
@@ -118,7 +165,7 @@ Testing our Apache + PHP
 
 Please note the file name, it is index.php. Many times, Notepad saves it as index.php.txt, while saving, don`t forget to mention the type as All Files, this way Notepad will save it as index.php.  Note that for php 5.3.5,the information about php is given by function php_info.php.
 
-[C] Configuring Perl scripts: 
+C] Configuring Perl scripts
 Now, take the breath of relief. The Perl configuration is very easy. Now, httpd.conf file contains the usual Apache configuration directives that can be enabled by uncommenting a certain line. In case of Python CGI scripts, the line containing the AddHandler directive from the http.conf file must have the next structure:
 
   
