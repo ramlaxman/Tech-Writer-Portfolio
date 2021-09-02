@@ -1,35 +1,55 @@
-# Configure Your Own WAMP Server
+# Configure Your Own WAMP Server on Windows
 
-## 1. INSTALL & CONFIGURE PHP
+## 1. Install and Configure PHP
 
-`Step 1:`
+### 1.1 Download and extract PHP
 
-At the time of writing this guide, PHP 8.0.9 is latest stable version available.Download preferred PHP binary zip file from https://windows.php.net. There are two types of zip files available: *Thread Safe* and *Non-thread Safe*. We'll use `thread safe version` for our guide. 
+At the time of writing this guide, PHP 8.0.9 was the latest stable version available. Download preferred PHP binary zip file from https://windows.php.net. There are two types of zip files available: 
+- *Thread Safe* 
+- *Non-thread Safe*. 
 
-To know more about difference, visit [Microsoft Docs](https://docs.microsoft.com/en-us/iis/application-frameworks/install-and-configure-php-on-iis/install-and-configure-php).
+We'll use `thread safe version` for our guide.
 
-Open the zip file & Extract all your files to C:\server\php. Navigate to C:\server\php 
+To know more about the difference, visit [PHP configuration instructions for IIS server](https://docs.microsoft.com/en-us/iis/application-frameworks/install-and-configure-php-on-iis/install-and-configure-php).
 
-`Step 2:`
+After downloading, open the zip file and extract all your files to C:\server\php. Navigate to C:\server\php.
 
-Rename php.ini- file. Search for the file, php.ini-development and rename it to php.ini 
+### 1.2 Configure PHP settings
 
-`Step 3:`
-EDIT php.ini. Open up php.ini using any text-editor.(Notepad++,Preferably Dreamweaver).  There are 2 edits in this file 
-->Edit 1 
-Find extension_dir = "./" and replace it with (Please note the slashes) 
-extension_dir = "C:/server/php/ext" and remember to remove semicolon(;) at its starting. ->Edit 2 
-Now in the following edit, you just have to uncomment (by removing the “; – semicolon”) from the extension to activate it. So here are the extensions to be uncommented. Search for each one them and remove the semicolon (;) 
-;extension=php_gd2.dll 
-;extension=php_mbstring.dll 
-;extension=php_mysql.dll 
-;extension=php_mysqli.dll 
-The First extension enables the Image GD library of PHP. The Second enables mbstring. The Third and forth enables us to use MySQL database. 
+#### 1.2.1 Rename php.ini
+
+Search for the file, `php.ini-development` and rename it to `php.ini`.
+
+#### 1.2.2 EDIT php.ini
+
+Open up `php.ini` using any text-editor.
+
+There are in total two edits in this file.
+
+- Find `extension_dir = "./"` and replace it with `extension_dir = "C:/server/php/ext"` and remember to remove semicolon(;) at its starting. 
+
+    > Note: 
+    > 
+    > Please note the slashes and use the same while replacing with new path.
+
+- In this edit, you just have to uncomment. In this case, remove the semicolon from .dll extensions to activate it. It is as follows:
+
+    ```powershell
+    ;extension=php_gd2.dll 
+    ;extension=php_mbstring.dll 
+    ;extension=php_mysql.dll 
+    ;extension=php_mysqli.dll 
+    ```
+
+First line enables the PHP image GD library extension. 
+
+Second line enables mbstring, an extension of php used to manage non-ASCII strings.
+
+The Third and forth enables us to use MySQL database where `php_mysql` is for backward compatibility and `php_mysqli` is for providing latest database API connectivity.
+
 Save the php.ini file. 
 
-`Step 4:`
-
-Adding PHP Environmental Variables in the System path. 
+### 1.3  Adding PHP Environmental Variables in the System path. 
 Great! Now we have to add tell the computer to start php every time the computer reboots.
  So, Navigate to your Start->Control Panel->System->Advanced System Settings then go to the advanced tab, Click on the Environmental Variables button, then scroll down in system variables to find PATH, Edit it Add the following Code to it, [ C:\server\php; ] 
  OR 
@@ -37,7 +57,7 @@ Great! Now we have to add tell the computer to start php every time the computer
 Step 5: 
  You MUST MUST MUST reboot a windows box after setting the Path variable (step 2). If you move on past that point without rebooting – logging off is NOT enough – apache will have trouble finding your mySQL extensions. 
 Finally, Step 2 is over !. Now we have PHP configured. Lets move on to configuring Apache.  [B] Configuring Apache HTTP Server 2.2.17  
- Before this, you need to know there are two servers developed by apache software foundation: apache tomcat server & apache http server. In year 2011,
+ Before this, you need to know there are two servers developed by apache software foundation: apache tomcat server and apache http server. In year 2011,
 
 ## Apache Tomcat 7.0.6 and Apache HTTP server 2.2.17. 
 
@@ -110,12 +130,12 @@ In this way, Apache web server will treat Python and Perl files as CGI scripts. 
 
 http://localhost/cgi-bin/Hello.pl 
  Click on the above link, you will receive Hello world message.  
- There is a quite small difference between cgi & Perl scripts.CGI scripts are saved with extension .cgi and sample program for PERL cgi is: 
+ There is a quite small difference between cgi and Perl scripts.CGI scripts are saved with extension .cgi and sample program for PERL cgi is: 
 
  Save it as test.cgi and check it: 
 http://localhost/cgi-bin/test.cgi 
 [D] Configuring python scripting: 
- The same procedure for python script only code is important at start up & save with index.py: 
+ The same procedure for python script only code is important at start up and save with index.py: 
  Click on the following link and check it:
 http://localhost/cgi-bin/index.py 
 Now, for CGI scripts: 
