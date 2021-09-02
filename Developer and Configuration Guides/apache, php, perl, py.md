@@ -14,8 +14,6 @@ To know more about the difference, visit [PHP configuration instructions for IIS
 
 After downloading, open the zip file and extract all your files to C:\server\php. Navigate to C:\server\php.
 
-### 1.2 Configure PHP settings
-
 #### 1.2.1 Rename php.ini
 
 Search for the file, `php.ini-development` and rename it to `php.ini`.
