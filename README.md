@@ -1,2 +1,1 @@
-# askmetech
-Ask me about Technology
+# I write about Computer Science and almost anything. :smile:
